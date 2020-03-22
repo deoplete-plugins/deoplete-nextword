@@ -15,8 +15,10 @@ class Source(Base):
         self.name = 'nextword'
         self.mark = '[nextword]'
         self.vars = {
-            'args': ['-n', '20'],
+            'args': ['-n', '100', '-g'],
         }
+        self.is_volatile = True
+        self.sorters = []
 
         self._executable_nextword = self.vim.call('executable', 'nextword')
         self._proc = None
